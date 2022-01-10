@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FasterThanTheFastest.MainPage">
+
+    <ScrollView  BackgroundColor="White" Scrolled="ScrollView_Scrolled">
+        <StackLayout>
+            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                <Label Text="FasterThanTheFastest" HorizontalTextAlignment="Center" TextColor="White" FontSize="20"/>
+            </Frame>
+            <Grid Margin="35,10,35,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="From" Text="Откуда" TextColor="Black" FontSize="20" Margin="5,0,10,0" Grid.Row="0" Grid.Column="0"
+                       VerticalTextAlignment="Center"/>
+                <Picker x:Name="FromPicker" TextColor="Black" FontSize="16"
+                       SelectedIndexChanged="FromPicker_SelectedIndexChanged" Grid.Row="1" Grid.Column="0">
+                    <Picker.Items>
+                        <x:String>Комендантский проспект</x:String>
+                        <x:String>Чернышевская</x:String>
+                        <x:String>Шушары</x:String>
+                        <x:String>Садовая</x:String>
+                        <x:String>Озерки</x:String>
+                        <x:String>Крестовский остров</x:String>
+                        <x:String>Парк Победы</x:String>
+                        <x:String>Невский проспект</x:String>
+                    </Picker.Items>
+                </Picker>
+                <ImageButton Source="replace.png" BackgroundColor="White" Clicked="ImageButton_Clicked" Grid.Row="1" Grid.Column="1"/>
+                <Label x:Name="To" Text="Куда" TextColor="Black" FontSize="20" Margin="5,0,10,0" Grid.Row="0" Grid.Column="2"
+                        VerticalTextAlignment="Center"/>
+                <Picker x:Name="ToPicker" TextColor="Black" FontSize="16" SelectedIndexChanged="ToPicker_SelectedIndexChanged" 
+                        Grid.Row="1" Grid.Column="2">
+                    <Picker.Items>
+                        <x:String>Комендантский проспект</x:String>
+                        <x:String>Чернышевская</x:String>
+                        <x:String>Шушары</x:String>
+                        <x:String>Садовая</x:String>
+                        <x:String>Озерки</x:String>
+                        <x:String>Крестовский остров</x:String>
+                        <x:String>Парк Победы</x:String>
+                        <x:String>Невский проспект</x:String>
+                    </Picker.Items>
+                </Picker>
+            </Grid>
+            <Button Text="Рассчитать" Clicked="Button_Clicked" Margin="35,10,35,10"/>
+            <Label Margin="35,10,35,10">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Знаете ли вы" TextColor="Black" FontSize="20" TextDecorations="Underline" FontAttributes="Bold">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Image x:Name="Advice" Source="default1.jpg" IsVisible="false"/>
+            <Image x:Name="Result" IsVisible="false"/>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
